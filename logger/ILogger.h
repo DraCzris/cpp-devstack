@@ -158,7 +158,9 @@ namespace log {
     const Logger__TokenType& progress = Logger__TokenType(LOG_PROGRESS);
     const Logger__TokenType& results = Logger__TokenType(LOG_RESULTS);
 
-    const Logger__TokenFlush log(const int& code = 0) {
+    const Logger__TokenFlush& log = Logger__TokenFlush();
+
+    const Logger__TokenFlush logc(const int& code = 0) {
         return Logger__TokenFlush(code);
     }
 }

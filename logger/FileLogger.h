@@ -46,8 +46,9 @@ protected:
         stream.write(content);
     }
 public:
-    void setLogPath(string path) {
+    virtual FileLogger* setLogPath(string path) {
         logStream.path = path;
+        return this;
     }
 
     virtual void close() {
