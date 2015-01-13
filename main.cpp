@@ -9,8 +9,8 @@ int main() {
     MultiFileLogger* logger = new MultiFileLogger();
 
     logger
-            ->setLogPath("/Users/draczris/Library/Caches/clion10/cmake/generated/89b20623/89b20623/Debug/info.txt", LOG_INFO)
-            ->setLogPath("/Users/draczris/Library/Caches/clion10/cmake/generated/89b20623/89b20623/Debug/meta.txt", LOG_META)
+            ->setLogPath("path_info.txt", LOG_INFO)
+            ->setLogPath("path_meta.txt", LOG_META)
     ;
     *logger << logger::info << "info heureka" << logger::log;
     *logger << logger::meta << "meta heureka" << logger::log;
