@@ -12,8 +12,8 @@ int main() {
             ->setLogPath("/Users/draczris/Library/Caches/clion10/cmake/generated/89b20623/89b20623/Debug/info.txt", LOG_INFO)
             ->setLogPath("/Users/draczris/Library/Caches/clion10/cmake/generated/89b20623/89b20623/Debug/meta.txt", LOG_META)
     ;
-    *logger << log::info << "info heureka" << log::log;
-    *logger << log::meta << "meta heureka" << log::log;
+    *logger << logger::info << "info heureka" << logger::log;
+    *logger << logger::meta << "meta heureka" << logger::log;
 
     logger->close();
 

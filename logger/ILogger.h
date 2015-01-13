@@ -152,7 +152,7 @@ public:
     }
 };
 
-namespace log {
+namespace logger {
     const Logger__TokenType& info = Logger__TokenType(LOG_INFO);
     const Logger__TokenType& meta = Logger__TokenType(LOG_META);
     const Logger__TokenType& progress = Logger__TokenType(LOG_PROGRESS);
