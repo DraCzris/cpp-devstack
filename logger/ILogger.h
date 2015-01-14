@@ -41,6 +41,11 @@ protected:
     stringstream progress_buffer = stringstream();
     stringstream result_buffer = stringstream();
 
+    void resetStream(stringstream &stream) {
+        stream.str( string() );
+        stream.clear();
+    }
+
     stringstream& getStream(const int& type) {
         switch (type) {
             case LOG_INFO:
@@ -80,10 +85,10 @@ public:
 
     void reset()
     {
-        meta_buffer.clear();
-        info_buffer.clear();
-        progress_buffer.clear();
-        result_buffer.clear();
+        resetStream(meta_buffer);
+        resetStream(info_buffer);
+        resetStream(progress_buffer);
+        resetStream(result_buffer);
     }
     virtual void close() {}
 
@@ -91,7 +96,8 @@ public:
         if (verbose & _type) {
             logWithVerbosityCheck(_type, getStream(_type).str(), code);
         }
-        getStream(_type).clear();
+
+        resetStream(getStream(_type));
     }
 
     virtual void logResult(const string& message, const int &code = 0) {
@@ -160,7 +166,7 @@ namespace logger {
 
     const Logger__TokenFlush& log = Logger__TokenFlush();
 
-    const Logger__TokenFlush logc(const int& code = 0) {
+    inline Logger__TokenFlush logc(const int& code = 0) {
         return Logger__TokenFlush(code);
     }
 }
